@@ -12,6 +12,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>n", ":Neotree<CR>")
+vim.keymap.set("n", "<leader>nh", ":Neotree /home/asswecan/<CR>")
+vim.keymap.set("n", "<leader>np", ":Neotree .<CR>")
 
 vim.keymap.set("n", "<leader>vwm", function()
     require("vim-with-me").StartVimWithMe()
