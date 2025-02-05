@@ -53,3 +53,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set("n", "<leader>lu", ":LspStart<CR>")
+vim.keymap.set("n", "<leader>ld", ":LspStop<CR>")
+vim.keymap.set("n", "<leader>n", ":Neotree<CR>")

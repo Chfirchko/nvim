@@ -27,7 +27,7 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 --vim.diagnostic.enable()
-vim.diagnostic.disable()
+vim.diagnostic.enable()
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })

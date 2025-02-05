@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use { "diegoulloao/neofusion.nvim" }
 
     use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use 'nvim-tree/nvim-web-devicons'
@@ -31,6 +30,14 @@ return require('packer').startup(function(use)
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     })
+    --Greeter
+use {
+  "startup-nvim/startup.nvim",
+  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"},
+  config = function()
+ require("startup").setup({theme = "my_theme"}) -- put theme name here   require"startup".setup()
+  end
+}
     --LSP Support
 
     use {
