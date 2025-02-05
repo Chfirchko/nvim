@@ -2,12 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'eslint',
-  'rust_analyzer',
-  'pyright',
-})
-
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
     settings = {
@@ -32,18 +26,30 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
+--vim.diagnostic.enable()
+vim.diagnostic.disable()
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+--lsp.set_preferences({
+ --   suggest_lsp_servers = false,
+   -- sign_icons = {
+--        error = 'E',
+ --       warn = 'W',
+ --       hint = 'H',
+  --      info = 'I'
+   -- }
+--})
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✘',
+      [vim.diagnostic.severity.WARN] = '▲',
+      [vim.diagnostic.severity.HINT] = '⚑',
+      [vim.diagnostic.severity.INFO] = '»',
+    },
+  },
 })
 
 lsp.on_attach(function(client, bufnr)

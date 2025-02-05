@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
     use { "diegoulloao/neofusion.nvim" }
 
     use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
+    use 'nvim-tree/nvim-web-devicons'
     --Themes
     use { "diegoulloao/neofusion.nvim" }
     use { "maxmx03/fluoromachine.nvim" }
@@ -20,7 +20,17 @@ return require('packer').startup(function(use)
 
     use ( 'ThePrimeagen/harpoon')
     use ( 'mbbill/undotree')
-
+    --NeoTree
+    use({
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    })
     --LSP Support
 
     use {
