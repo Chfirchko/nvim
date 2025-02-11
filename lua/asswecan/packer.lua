@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
 
     use ( 'ThePrimeagen/harpoon')
     use ( 'mbbill/undotree')
+    --Folding 
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
     --NeoTree
     use({
         "nvim-neo-tree/neo-tree.nvim",
@@ -31,13 +34,13 @@ return require('packer').startup(function(use)
         }
     })
     --Greeter
-use {
-  "startup-nvim/startup.nvim",
-  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"},
-  config = function()
- require("startup").setup({theme = "my_theme"}) -- put theme name here   require"startup".setup()
-  end
-}
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"},
+        config = function()
+            require("startup").setup({theme = "my_theme"}) -- put theme name here   require"startup".setup()
+        end
+    }
     --LSP Support
 
     use {
@@ -64,4 +67,8 @@ use {
     }
 
 
+
+
+
 end)
+
